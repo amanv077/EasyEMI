@@ -1,14 +1,7 @@
 import "./App.css";
-import Footer from "./component/footer/Footer";
-import Header from "./component/header/Header";
 
 function App() {
-  return (
-    <div>
-      <Header />
-      <Footer />
-    </div>
-  );
+  return <div>Main Page</div>;
 }
 
 export default App;
