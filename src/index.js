@@ -1,11 +1,11 @@
 // index.js
-import "./index.css";
 import App from "./App";
-import reportWebVitals from "./reportWebVitals";
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./Layout";
+import AddNewMember from "./component/member/AddNewMember";
+import Dashboard from "./component/homepage/HomePage";
 
 const router = createBrowserRouter([
   {
@@ -17,12 +17,16 @@ const router = createBrowserRouter([
         element: <App />, // Render App at the root path
       },
       {
-        path: "about",
-        element: <div>About Page</div>, // Example of a child route
+        path: "/",
+        element: <Dashboard />, // Example of a child route
       },
       {
         path: "contact",
         element: <div>Contact Page</div>, // Example of a child route
+      },
+      {
+        path: "newmember",
+        element: <AddNewMember />, // Example of a child route
       },
     ],
   },
@@ -33,5 +37,3 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <RouterProvider router={router} />
   </React.StrictMode>
 );
-
-reportWebVitals();

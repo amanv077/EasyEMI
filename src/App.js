@@ -1,7 +1,13 @@
+import React from "react";
 import "./App.css";
+import Dashboard from "./component/homepage/HomePage";
 
-function App() {
-  return <div>Main Page</div>;
-}
+const App = () => {
+  return (
+    <div>
+      <Dashboard />
+    </div>
+  );
+};
 
 export default App;
