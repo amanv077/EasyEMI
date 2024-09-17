@@ -6,6 +6,13 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./Layout";
 import AddNewMember from "./component/member/AddNewMember";
 import Dashboard from "./component/homepage/HomePage";
+import ContactUs from "./component/ExtraPages/ContactUs";
+import Team from "./component/ExtraPages/Team";
+import Features from "./component/ExtraPages/Features";
+import MarketPlace from "./component/ExtraPages/MarketPlace";
+import Company from "./component/ExtraPages/Company";
+
+//add new member function
 
 const router = createBrowserRouter([
   {
@@ -27,64 +34,23 @@ const router = createBrowserRouter([
       },
       {
         path: "/company",
-        element: (
-          <div className="h-screen flex items-center justify-center bg-gray-100">
-            <div className="text-center">
-              <h1 className="text-4xl font-bold text-gray-800 mb-4">
-                Company Info
-              </h1>
-              <p className="text-2xl text-gray-600">Coming Soon</p>
-            </div>
-          </div>
-        ), // Example of a child route
+        element: <Company />,
       },
       {
         path: "/marketplace",
-        element: (
-          <div className="h-screen flex items-center justify-center bg-gray-100">
-            <div className="text-center">
-              <h1 className="text-4xl font-bold text-gray-800 mb-4">
-                Marketplace
-              </h1>
-              <p className="text-2xl text-gray-600">Coming Soon</p>
-            </div>
-          </div>
-        ), // Example of a child route
+        element: <MarketPlace />,
       },
       {
         path: "/features",
-        element: (
-          <div className="h-screen flex items-center justify-center bg-gray-100">
-            <div className="text-center">
-              <h1 className="text-4xl font-bold text-gray-800 mb-4">
-                Features
-              </h1>
-              <p className="text-2xl text-gray-600">Coming Soon</p>
-            </div>
-          </div>
-        ), // Example of a child route
+        element: <Features />,
       },
       {
         path: "/team",
-        element: (
-          <div className="h-screen flex items-center justify-center bg-gray-100">
-            <div className="text-center">
-              <h1 className="text-4xl font-bold text-gray-800 mb-4">Team</h1>
-              <p className="text-2xl text-gray-600">Coming Soon</p>
-            </div>
-          </div>
-        ), // Example of a child route
+        element: <Team />,
       },
       {
         path: "/contact",
-        element: (
-          <div className="h-screen flex items-center justify-center bg-gray-100">
-            <div className="text-center">
-              <h1 className="text-4xl font-bold text-gray-800 mb-4">Contact</h1>
-              <p className="text-2xl text-gray-600">Coming Soon</p>
-            </div>
-          </div>
-        ), // Example of a child route
+        element: <ContactUs />,
       },
     ],
   },
