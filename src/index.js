@@ -1,4 +1,3 @@
-// index.js
 import App from "./App";
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
@@ -11,9 +10,16 @@ import Team from "./component/ExtraPages/Team";
 import Features from "./component/ExtraPages/Features";
 import MarketPlace from "./component/ExtraPages/MarketPlace";
 import Company from "./component/ExtraPages/Company";
+import MemberProfile from "./component/member/MemberProfile";
 
-//add new member function
+// Function to add a new member
+const addMember = (uuid, name, email, number, status) => {
+  const members = JSON.parse(localStorage.getItem("members")) || [];
+  members.push({ uuid, name, email, number, status });
+  localStorage.setItem("members", JSON.stringify(members));
+};
 
+// Define the router with the AddNewMember component receiving addMember as a prop
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,33 +30,36 @@ const router = createBrowserRouter([
         element: <App />, // Render App at the root path
       },
       {
-        path: "/",
-        element: <Dashboard />, // Example of a child route
+        path: "dashboard", // Corrected the path to avoid conflict with the root path
+        element: <Dashboard addMember={addMember} />, // Example of a child route
       },
-
       {
         path: "newmember",
-        element: <AddNewMember />, // Example of a child route
+        element: <AddNewMember addMember={addMember} />, // Pass addMember as a prop
       },
       {
-        path: "/company",
+        path: "company",
         element: <Company />,
       },
       {
-        path: "/marketplace",
+        path: "marketplace",
         element: <MarketPlace />,
       },
       {
-        path: "/features",
+        path: "features",
         element: <Features />,
       },
       {
-        path: "/team",
+        path: "team",
         element: <Team />,
       },
       {
-        path: "/contact",
+        path: "contact",
         element: <ContactUs />,
+      },
+      {
+        path: "memberprofile/:uuid",
+        element: <MemberProfile />, // Add this route
       },
     ],
   },
